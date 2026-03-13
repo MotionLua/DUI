@@ -54,11 +54,11 @@ body.in-game #bg { display: none; }
   backdrop-filter: blur(12px);
   overflow: hidden;
   z-index: 100;
-  display: flex;
+  display: none;               /* hidden by default */
   flex-direction: column;
 }
 body.in-game #panel { display: none; }
-body.in-game #panel.visible { display: flex; }
+body.in-game #panel.visible { display: flex; }  /* only show when Motion DUI explicitly opens */
 
 /* Banner – same as fixed_index: full width, fixed vw height, cover fill */
 .banner {
@@ -486,12 +486,12 @@ body.in-game #panel.visible { display: flex; }
     </div>
   </div>
 
-  <!-- Choice overlay: shown on injection when Lua sends showChoice; two buttons Macho / Motion DUI -->
+  <!-- Choice overlay: shown on injection when Lua sends showChoice; two buttons Macho NUI / Motion DUI -->
   <div id="choice-overlay">
     <div id="choice-box">
-      <div class="choice-title">Choose menu</div>
+      <div class="choice-title" style="display:none;"></div>
       <div class="choice-buttons">
-        <button type="button" id="choice-macho" class="choice-btn">Macho Menu</button>
+        <button type="button" id="choice-macho" class="choice-btn">Macho NUI</button>
         <button type="button" id="choice-motion" class="choice-btn primary">Motion DUI</button>
       </div>
     </div>
