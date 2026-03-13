@@ -54,11 +54,12 @@ body.in-game #bg { display: none; }
   backdrop-filter: blur(12px);
   overflow: hidden;
   z-index: 100;
-  display: none;               /* hidden by default */
+  display: flex;               /* show in browser */
   flex-direction: column;
 }
+/* In-game: hide panel unless explicitly made .visible by showScrollMenu */
 body.in-game #panel { display: none; }
-body.in-game #panel.visible { display: flex; }  /* only show when Motion DUI explicitly opens */
+body.in-game #panel.visible { display: flex; }
 
 /* Banner – same as fixed_index: full width, fixed vw height, cover fill */
 .banner {
